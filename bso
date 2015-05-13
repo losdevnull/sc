@@ -1,0 +1,26 @@
+#!/usr/bin/python
+import telnetlib
+import ConfigParser
+import os
+
+hosts = ['9.42.68.120']
+user = os.getenv('intranet_id')
+password = os.getenv('intranet_password')
+
+telnet=telnetlib.Telnet()
+
+for host in hosts:
+    try:
+        telnet.open(host)
+        rc = telnet.read_until('Username: ', 10)
+        rc.index('Username:')  ## throw ValueError if "Username" is not found
+        telnet.write(user + '\n')
+        telnet.read_until('Password: ', 10)
+        telnet.write(password + '\n')
+        telnet.read_until('Success', 10)
+        print('BSO successfully passed for %s' % host)
+    except:
+        print('BSO already passed for %s' % host)
+    finally:
+        telnet.close()
+
