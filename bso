@@ -1,9 +1,8 @@
 #!/usr/bin/python
 import telnetlib
-import ConfigParser
 import os
 
-hosts = ['9.42.68.120']
+hosts = ['9.42.68.120', '9.111.142.16']
 user = os.getenv('intranet_id')
 password = os.getenv('intranet_password')
 

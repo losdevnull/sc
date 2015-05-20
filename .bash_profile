@@ -24,6 +24,8 @@ alias lsock='sudo /usr/sbin/lsof -i -P'             # lsock:        Display open
 alias lsockU='sudo /usr/sbin/lsof -nP | grep UDP'   # lsockU:       Display only open UDP sockets
 alias lsockT='sudo /usr/sbin/lsof -nP | grep TCP'   # lsockT:       Display only open TCP sockets
 
+alias pspy="ps -ef | grep python"
+
 export PS1="\u@\h: \w$ "
 export PATH=$PATH:/Users/los/Code/sc
 export `cat ~/secrets`
