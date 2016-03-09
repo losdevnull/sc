@@ -27,7 +27,7 @@ alias lsockU='sudo /usr/sbin/lsof -nP | grep UDP'   # lsockU:       Display only
 alias lsockT='sudo /usr/sbin/lsof -nP | grep TCP'   # lsockT:       Display only open TCP sockets
 alias pspy="ps -ef | grep python"
 alias eclipse="open -n /Applications/eclipse/Eclipse.app"
-alias cdz="cd ~/Code/workspace_alloy/Zeron/zeron.tests"
+alias cdz="cd ~/Code/workspace_trunk/Zeron/zeron.tests"
 
 eval $(thefuck --alias)
 

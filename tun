@@ -1,5 +1,7 @@
-pid=`ps -ef|grep "ssh -Nn -D 12345 root@dystopia" | grep -v grep | awk '{print $2}'`
+pid=`ps -ef|grep "ssh -Nn -D 12345" | grep -v grep | awk '{print $2}'`
+#pid=`ps -ef|grep "ssh -Nn -D 12345 ibmadmin@losrtp.rtp.raleigh.ibm.com" | grep -v grep | awk '{print $2}'`
 if [ "$pid" ]; then
     kill $pid
 fi
 ssh -Nn -D 12345 root@dystopia &
+#ssh -Nn -D 12345 ibmadmin@losrtp.rtp.raleigh.ibm.com &
