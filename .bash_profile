@@ -31,9 +31,9 @@ alias cdz="cd ~/Code/workspace_trunk/Zeron/zeron.tests"
 
 eval $(thefuck --alias)
 
-export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
+#export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
 
-export PS1="\u@\h: \w$ "
+export PS1="\e[0;34m\u@devnull \w> \e[m"
 export GOPATH=/Users/los/Code/gocode
 export PATH=$PATH:/Users/los/Code/sc:$GOPATH/bin
 export `cat ~/secrets`
