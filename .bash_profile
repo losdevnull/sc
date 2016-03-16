@@ -33,12 +33,9 @@ eval $(thefuck --alias)
 
 #export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
 
-export PS1="\e[0;34m\u@devnull \w> \e[m"
+export PS1="\[\e[0;34m\]\u@devnull \w> \[\e[m\]"
 export GOPATH=/Users/los/Code/gocode
 export PATH=$PATH:/Users/los/Code/sc:$GOPATH/bin
 export `cat ~/secrets`
 
-
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/los/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
+source /usr/local/bin/virtualenvwrapper.sh
