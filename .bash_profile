@@ -15,7 +15,7 @@ alias df="df -h"
 alias du="du -h"
 alias grep="grep --color"
 alias h="history"
-alias search="find . -type f | xargs grep --color"
+alias search="find . -type f | sed -e 's/^/\"/g' -e 's/$/\"/g' | xargs grep --color"
 alias rplsearch="find . -type f | xargs grep -l"
 alias ff="find . -name "
 alias fdir="find . -type d | grep"
@@ -33,9 +33,13 @@ eval $(thefuck --alias)
 #export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
 
 export PS1="\[\e[0;34m\]\u@devnull \w> \[\e[m\]"
+PS1='\[\e]1;\s\$ \W\a\e]2;\u@\h\a\]'"$PS1"
 #export GOPATH=/Users/los/Code/gocode
 #export PATH=$PATH:/Users/los/Code/sc:$GOPATH/bin
 export PATH=$PATH:/Users/los/Code/sc
 export `cat ~/secrets`
 
 source /usr/local/bin/virtualenvwrapper.sh
+
+alias ops=". ~/tornado_ops_env.sh"
+alias benv=". ~/bluemix_switch.sh"
